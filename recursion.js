@@ -17,4 +17,30 @@ const sumNumber = (n) => {
   return sum;
 };
 
-console.log(sumNumber(5));
+function fibonacci(n) {
+  if (n <= 1) {
+    return n;
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+}
+
+function printFibonacciSeries(count) {
+  for (let i = 0; i < count; i++) {
+    console.log(fibonacci(i));
+  }
+}
+
+function fibonacci_(n, current = 0, next = 1) {
+  if (n <= 0) {
+    return;
+  }
+
+  console.log(current);
+  fibonacci_(n - 1, next, current + next);
+}
+
+// Example: Print the first 10 Fibonacci numbers
+fibonacci_(10);
+
+// printFibonacciSeries(10);
