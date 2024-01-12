@@ -41,6 +41,14 @@ function fibonacci_(n, current = 0, next = 1) {
 }
 
 // Example: Print the first 10 Fibonacci numbers
-fibonacci_(10);
 
 // printFibonacciSeries(10);
+
+function printArrayElements(arr, index = 0) {
+  if (index < arr.length) {
+    console.log(arr[index]);
+    printArrayElements(arr, index + 1);
+  }
+}
+
+printArrayElements([1, 2, 3]);
