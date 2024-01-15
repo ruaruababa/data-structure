@@ -18,23 +18,36 @@ const selection_sort = (arr) => {
   //   return arr;
 
   const len = arr.length;
-
+  // [5, 10, 4, 6, 23, 0, 7];
   for (let i = 0; i < len - 1; i++) {
     let minIndex = i;
-    console.log("r", i);
-    console.log("rs", arr);
+    console.log(`After  i ${i} loop`, arr);
+    console.log("Mindex", minIndex);
+
     // Find the index of the minimum element in the unsorted part of the array
     for (let j = i + 1; j < len; j++) {
+      // right small than left
+      // min index =  right index
       if (arr[j] < arr[minIndex]) {
+        console.log("arr[j]", arr[j]);
+        console.log("arr[minIndex]", arr[minIndex]);
         minIndex = j;
       }
     }
 
+    console.log("Minindex === i >>> Min", minIndex);
+    console.log("Minindex === i >>> I", i);
     if (minIndex !== i) {
+      console.log("before", arr[i]);
+      console.log("before minIndex", arr[minIndex]);
       // Swap using a temporary variable
-      let temp = arr[i];
+      let temp = arr[i]; //5
       arr[i] = arr[minIndex];
+      //arr[0] = 0
       arr[minIndex] = temp;
+      //arr[5] = 5
+      console.log("after", arr[i]);
+      console.log("after minIndex", arr[minIndex]);
     }
   }
 
@@ -93,5 +106,5 @@ function swap(arr, i, j) {
   arr[j] = temp;
 }
 
-// console.log(selection_sort([5, 10, 4, 6, 23, 0, 4]));
-console.log(selectionSort([5, 10, 4, 6, 23, 0, 4]));
+console.log(selection_sort([5, 10, 4, 6, 23, 0, 7]));
+// console.log(selectionSort([5, 10, 4, 6, 23, 0, 4]));
